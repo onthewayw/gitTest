@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: test
+  resources:
+    static-locations: classpath:/static
+  thymeleaf:
+    prefix: classpath:/static/
+logging:
+  config: classpath:logback-root.xml
+  level: debug

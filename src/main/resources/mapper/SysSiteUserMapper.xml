@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zuma.mapper.SysSiteUserBeanMapper">
+    <resultMap id="BaseResultMap" type="com.zuma.entity.SysSiteUserBean">
+        <id column="f_id" property="fId" />
+        <!-- 字段: [用户账户] -->
+        <result column="f_user_account" property="fUserAccount" />
+        <!-- 字段: [] -->
+        <result column="f_user_name" property="fUserName" />
+        <!-- 字段: [] -->
+        <result column="f_passWord" property="fPassword" />
+        <!-- 字段: [创建时间] -->
+        <result column="f_create_time" property="fCreateTime" />
+        <!-- 字段: [创建人] -->
+        <result column="f_create_id" property="fCreateId" />
+        <!-- 字段: [修改时间] -->
+        <result column="f_update_time" property="fUpdateTime" />
+        <!-- 字段: [修改人] -->
+        <result column="f_update_id" property="fUpdateId" />
+        <!-- 字段: [角色名称] -->
+        <result column="f_role_name" property="roleName" />
+        <result column="f_error_times" property="fErrorTimes" />
+        <!-- 字段: [1男0女] -->
+        <result column="f_sex" property="fSex" />
+        <!-- 字段: [出生时间] -->
+        <result column="f_birthday_time" property="fBirthdayTime" />
+        <!-- 字段: [名族] -->
+        <result column="f_nation" property="fNation" />
+        <!-- 字段: [户口类型 0 本地农村 1外地农村 2本地城镇 3外地城镇] -->
+        <result column="f_population" property="fPopulation" />
+        <!-- 字段: [固定号码] -->
+        <result column="f_tel" property="fTel" />
+        <!-- 字段: [学历 0博士 1硕士 2本科 ] -->
+        <result column="f_educational" property="fEducational" />
+        <!-- 字段: [分机] -->
+        <result column="f_extension" property="fExtension" />
+        <!-- 字段: [手机号] -->
+        <result column="f_phone" property="fPhone" />
+        <!-- 字段: [在职状态 0在职 1离职 2停薪留职] -->
+        <result column="f_payroll" property="fPayroll" />
+        <!-- 字段: [入职时间] -->
+        <result column="f_join_time" property="fJoinTime" />
+        <!-- 字段: [] -->
+        <result column="f_leave_time" property="fLeaveTime" />
+        <!-- 字段: [紧急联系人] -->
+        <result column="f_emergency" property="fEmergency" />
+        <!-- 字段: [紧急联系人电话] -->
+        <result column="f_emergency_tel" property="fEmergencyTel" />
+        <!-- 字段: [部门id] -->
+        <result column="f_department_id" property="fDepartmentId" />
+        <!-- 字段: [岗位id] -->
+        <result column="f_station_id" property="fStationId" />
+        <!-- 字段: [员工属性 0内部人员 1外部人员] -->
+        <result column="f_employee_type" property="fEmployeeType" />
+        <!-- 字段: [身份证] -->
+        <result column="f_id_card" property="fIdCard" />
+        <!-- 字段: [籍贯省] -->
+        <result column="f_born_provice" property="fBornProvice" />
+        <!-- 字段: [名称] -->
+        <result column="f_born_District" property="fBornDistrict" />
+        <!-- 字段: [籍贯市] -->
+        <result column="f_born_city" property="fBornCity" />
+        <!-- 字段: [名称] -->
+        <result column="f_born_town" property="fBornTown" />
+        <!-- 字段: [户籍省] -->
+        <result column="f_census_provice" property="fCensusProvice" />
+        <!-- 字段: [名称] -->
+        <result column="f_census_district" property="fCensusDistrict" />
+        <!-- 字段: [户籍市] -->
+        <result column="f_census_city" property="fCensusCity" />
+        <!-- 字段: [名称] -->
+        <result column="f_census_town" property="fCensusTown" />
+        <!-- 字段: [户籍地址] -->
+        <result column="f_census_addr" property="fCensusAddr" />
+        <!-- 字段: [现居住省] -->
+        <result column="f_now_provice" property="fNowProvice" />
+        <!-- 字段: [名称] -->
+        <result column="f_now_district" property="fNowDistrict" />
+        <!-- 字段: [先居住市区] -->
+        <result column="f_now_city" property="fNowCity" />
+        <!-- 字段: [名称] -->
+        <result column="f_now_town" property="fNowTown" />
+        <!-- 字段: [详细地址] -->
+        <result column="f_addr_detail" property="fAddrDetail" />
+        <!-- 字段: [英语等级] -->
+        <result column="f_english_level" property="fEnglishLevel" />
+        <!-- 字段: [用户头像] -->
+        <result column="f_user_image" property="fUserImage" />
+        <!-- 字段: [用户角色的名称 方便查询] -->
+        <result column="f_role_name" property="fRoleName" />
+        <!-- 字段:[所屬公司] -->
+        <result column="f_company_Id" property="fCompanyId" />
+        <!-- 字段:[所属岗位名] -->
+        <result column="f_PositionName" property="fPositionName" />
+        <!-- 字段:[所属部门名] -->
+        <result column="f_Department" property="fDepartment" />
+        <!-- 字段:[所属公司名] -->
+        <result column="f_company" property="fCompany" />
+        <!-- 字段[籍贯名字] -->
+        <result column="f_born_name" property="fBornName" />
+        <!-- 字段[户籍名字] -->
+        <result column="f_census_name" property="fCensusName" />
+        <!-- 字段[现居住地名字] -->
+        <result column="f_now_name" property="fNowName" />
+        <!-- 字段[国籍] -->
+        <result column="f_nationality" property="fNationality" />
+        <!-- 字段[开户银行] -->
+        <result column="f_deposit_bank" property="fDepositBank" />
+        <!-- 字段[银行卡号] -->
+        <result column="f_card_numbers" property="fCardNumbers" />
+        <!-- 字段[保密信息] -->
+        <result column="f_confidential" property="fConfidential" />
+        <!-- 字段[考勤卡号] -->
+        <result column="CardNo" property="fCardNo" />
+        <result column="f_deposit_bank_point" property="fDepositBankPoint" />
+        <result column="startDay" property="startDay" />
+        <result column="endByDay" property="endByDay" />
+        <result column="startAge" property="startAge" />
+        <result column="endAge" property="endAge" />
+        <result column="startJoinTime" property="startJoinTime" />
+        <result column="endJoinTime" property="endJoinTime" />
+        <result column="PositionStr" property="PositionStr" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+		f_id,f_user_name,f_passWord,f_create_time,f_create_id,f_update_time,f_update_id
+	</sql>
+
+    <sql id="all_list">
+        f_id,f_user_account,f_user_name,f_passWord,f_company_id,f_create_time,f_create_id,f_update_time,f_update_id,f_error_times,f_sex,f_birthday_time,f_nation,f_population,f_tel,f_educational,f_extension,f_phone,f_payroll,f_join_time,f_leave_time,f_emergency,f_emergency_tel,f_department_id,f_station_id,f_employee_type,f_id_card,f_born_provice,f_born_District,f_born_city,f_born_town,f_census_provice,f_census_district,f_census_city,f_census_town,f_census_addr,f_now_provice,f_now_district,f_now_city,f_now_town,f_addr_detail,f_english_level,f_user_image,f_role_name,
+		f_born_name,f_census_name,f_now_name,f_nationality,f_deposit_bank,f_card_numbers,f_confidential,CardNo,f_deposit_bank_point
+    </sql>
+
+
+    <!-- 查询条件 -->
+    <sql id="Example_Where_Clause">
+        <trim suffixOverrides=",">
+            <if test="fId != null">
+                and f_id = #{fId}
+            </if>
+            <if test="fBornName !=null">
+
+                and f_born_name=#{fBornName}
+            </if>
+            <if test="fCensusName !=null and fCensusName != ''">
+                and f_census_name like CONCAT('%',#{fCensusName},'%')
+            </if>
+            <if test="fNowName !=null">
+
+                and f_now_name = #{fNowName}
+            </if>
+            <if test="fUserAccount != null and fUserAccount != ''">
+                and f_user_account like CONCAT('%',#{fUserAccount},'%')
+            </if>
+            <if test="fUserName != null and fUserName != ''">
+                and f_user_name like CONCAT('%',#{fUserName},'%')
+            </if>
+            <if test="fPassword != null and fPassword != ''">
+                and f_passWord = #{fPassword}
+            </if>
+            <if test="fCreateTime != null">
+                and f_create_time = #{fCreateTime}
+            </if>
+            <if test="fCreateId != null">
+                and f_create_d = #{fCreateId}
+            </if>
+            <if test="fUpdateTime != null">
+                and f_update_time = #{fUpdateTime}
+            </if>
+            <if test="fUpdateId != null">
+                and f_update_id = #{fUpdateId}
+            </if>
+            <if test="fErrorTimes != null">
+                and f_error_times = #{fErrorTimes}
+            </if>
+            <if test="fSex != null">
+                and f_sex = #{fSex}
+            </if>
+            <if test="fBirthdayTime != null">
+                and f_birthday_time = #{fBirthdayTime}
+            </if>
+            <if test="fNation != null and fNation != ''">
+                and f_nation = #{fNation}
+            </if>
+            <if test="fPopulation != null">
+                and f_population = #{fPopulation}
+            </if>
+            <if test="fTel != null and fTel != ''">
+                and f_tel = #{fTel}
+            </if>
+            <if test="fEducational != null">
+                and f_educational = #{fEducational}
+            </if>
+            <if test="fExtension != null and fExtension != ''">
+                and f_extension = #{fExtension}
+            </if>
+            <if test="fPhone != null and fPhone != ''">
+                and f_phone = #{fPhone}
+            </if>
+            <if test="fPayroll != null">
+                and f_payroll = #{fPayroll}
+            </if>
+            <if test="fJoinTime != null">
+                and f_join_time &gt;= CONCAT(#{fJoinTime},' 00:00:00')
+            </if>
+            <if test="fLeaveTime != null">
+                and f_leave_time &lt;= CONCAT(#{fLeaveTime},' 23:59:59')
+            </if>
+            <if test="fEmergency != null and fEmergency != ''">
+                and f_emergency = #{fEmergency}
+            </if>
+            <if test="fEmergencyTel != null and fEmergencyTel != ''">
+                and f_emergency_tel = #{fEmergencyTel}
+            </if>
+            <if test="fDepartmentId != null">
+                and f_department_id = #{fDepartmentId}
+            </if>
+            <if test="fStationId != null">
+                and f_station_id = #{fStationId}
+            </if>
+            <if test="fEmployeeType != null">
+                and f_employee_type = #{fEmployeeType}
+            </if>
+            <if test="fIdCard != null and fIdCard != ''">
+                and f_id_card like CONCAT('%',#{fIdCard},'%')
+            </if>
+            <if test="fBornProvice != null">
+                and f_born_provice = #{fBornProvice}
+            </if>
+            <if test="fBornDistrict != null and fBornDistrict != ''">
+                and f_born_District = #{fBornDistrict}
+            </if>
+            <if test="fBornCity != null">
+                and f_born_city = #{fBornCity}
+            </if>
+            <if test="fBornTown != null and fBornTown != ''">
+                and f_born_town = #{fBornTown}
+            </if>
+            <if test="fCensusProvice != null">
+                and f_census_provice = #{fCensusProvice}
+            </if>
+            <if test="fCensusDistrict != null and fCensusDistrict != ''">
+                and f_census_district = #{fCensusDistrict}
+            </if>
+            <if test="fCensusCity != null">
+                and f_census_city = #{fCensusCity}
+            </if>
+            <if test="fCensusTown != null and fCensusTown != ''">
+                and f_census_town = #{fCensusTown}
+            </if>
+            <if test="fCensusAddr != null and fCensusAddr != ''">
+                and f_census_addr = #{fCensusAddr}
+            </if>
+            <if test="fNowProvice != null">
+                and f_now_provice = #{fNowProvice}
+            </if>
+            <if test="fNowDistrict != null and fNowDistrict != ''">
+                and f_now_district = #{fNowDistrict}
+            </if>
+            <if test="fNowCity != null">
+                and f_now_city = #{fNowCity}
+            </if>
+            <if test="fNowTown != null and fNowTown != ''">
+                and f_now_town = #{fNowTown}
+            </if>
+            <if test="fAddrDetail != null and fAddrDetail != ''">
+                and f_addr_detail = #{fAddrDetail}
+            </if>
+            <if test="fEnglishLevel != null and fEnglishLevel != ''">
+                and f_english_level = #{fEnglishLevel}
+            </if>
+            <if test="fUserImage != null and fUserImage != ''">
+                and f_user_image = #{fUserImage}
+            </if>
+            <if test="fRoleName != null and fRoleName != ''">
+                and f_role_name = #{fRoleName}
+            </if>
+            <if test="fCompanyId != null and fCompanyId != ''">
+                and f_company_id = #{fCompanyId}
+            </if>
+            <if test="fNationality != null and fNationality != ''">
+                and f_nationality = #{f_Nationality}
+            </if>
+
+            <if test="fDepositBank != null and fDepositBank != ''">
+                and f_deposit_bank = #{fDepositBank}
+            </if>
+
+            <if test="fCardNumbers != null and fCardNumbers != ''">
+                and f_card_numbers = #{fCardNumbers}
+            </if>
+            <if test="fConfidential != null and fConfidential != ''">
+                and f_confidential = #{fConfidential}
+            </if>
+        </trim>
+    </sql>
+
+    <select id="findCountByConditions" resultType="java.lang.Integer" parameterType="com.zuma.entity.SysSiteUserBean">
+        select count(1) from sys_site_user where 1 = 1
+        <include refid="Example_Where_Clause" />
+    </select>
+
+
+    <select id="findPageByConditions" resultMap="BaseResultMap" parameterType="com.zuma.entity.SysSiteUserBean">
+        select
+        <include refid="all_list" />
+        from sys_site_user
+        where 1=1
+        <include refid="Example_Where_Clause" />
+        limit #{iDisplayStart},#{iDisplayLength}
+    </select>
+
+    <select id="findListByConditions" resultMap="BaseResultMap" parameterType="com.zuma.entity.SysSiteUserBean">
+        select
+        <include refid="all_list" />
+        from sys_site_user
+        where 1=1
+        <include refid="Example_Where_Clause" />
+    </select>
+
+    <insert id="add" parameterType="com.zuma.entity.SysSiteUserBean">
+        insert into sys_site_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="fId != null">
+                f_id,
+            </if>
+            <if test="fUserAccount != null">
+                f_user_account,
+            </if>
+            <if test="fUserName != null">
+                f_user_name,
+            </if>
+            <if test="fPassword != null">
+                f_passWord,
+            </if>
+            <if test="fCreateTime != null">
+                f_create_time,
+            </if>
+            <if test="fCreateId != null">
+                f_create_id,
+            </if>
+            <if test="fUpdateTime != null">
+                f_update_time,
+            </if>
+            <if test="fUpdateId != null">
+                f_update_id,
+            </if>
+            <if test="fErrorTimes != null">
+                f_error_times,
+            </if>
+            <if test="fSex != null">
+                f_sex,
+            </if>
+            <if test="fBirthdayTime != null">
+                f_birthday_time,
+            </if>
+            <if test="fNation != null">
+                f_nation,
+            </if>
+            <if test="fPopulation != null">
+                f_population,
+            </if>
+            <if test="fTel != null">
+                f_tel,
+            </if>
+            <if test="fEducational != null">
+                f_educational,
+            </if>
+            <if test="fExtension != null">
+                f_extension,
+            </if>
+            <if test="fPhone != null">
+                f_phone,
+            </if>
+            <if test="fPayroll != null">
+                f_payroll,
+            </if>
+            <if test="fJoinTime != null">
+                f_join_time,
+            </if>
+            <if test="fLeaveTime != null">
+                f_leave_time,
+            </if>
+            <if test="fEmergency != null">
+                f_emergency,
+            </if>
+            <if test="fEmergencyTel != null">
+                f_emergency_tel,
+            </if>
+            <if test="fDepartmentId != null">
+                f_department_id,
+            </if>
+            <if test="fStationId != null">
+                f_station_id,
+            </if>
+            <if test="fEmployeeType != null">
+                f_employee_type,
+            </if>
+            <if test="fIdCard != null">
+                f_id_card,
+            </if>
+            <if test="fBornProvice != null">
+                f_born_provice,
+            </if>
+            <if test="fBornDistrict != null">
+                f_born_District,
+            </if>
+            <if test="fBornCity != null">
+                f_born_city,
+            </if>
+            <if test="fBornTown != null">
+                f_born_town,
+            </if>
+            <if test="fCensusProvice != null">
+                f_census_provice,
+            </if>
+            <if test="fCensusDistrict != null">
+                f_census_district,
+            </if>
+            <if test="fCensusCity != null">
+                f_census_city,
+            </if>
+            <if test="fCensusTown != null">
+                f_census_town,
+            </if>
+            <if test="fCensusAddr != null">
+                f_census_addr,
+            </if>
+            <if test="fNowProvice != null">
+                f_now_provice,
+            </if>
+            <if test="fNowDistrict != null">
+                f_now_district,
+            </if>
+            <if test="fNowCity != null">
+                f_now_city,
+            </if>
+            <if test="fNowTown != null">
+                f_now_town,
+            </if>
+            <if test="fAddrDetail != null">
+                f_addr_detail,
+            </if>
+            <if test="fEnglishLevel != null">
+                f_english_level,
+            </if>
+            <if test="fUserImage != null">
+                f_user_image,
+            </if>
+            <if test="fRoleName != null">
+                f_role_name,
+            </if>
+            <if test="fCompanyId != null">
+                f_company_id,
+            </if>
+            <if test="fBornName != null">
+                f_born_name,
+            </if>
+            <if test="fCensusName != null">
+                f_census_name,
+            </if>
+            <if test="fNowName != null">
+                f_now_name,
+            </if>
+            <if test="fNationality != null">
+                f_nationality,
+            </if>
+            <if test="fDepositBank != null">
+                f_deposit_bank,
+            </if>
+            <if test="fCardNumbers != null">
+                f_card_numbers,
+            </if>
+            <if test="fConfidential != null">
+                f_confidential,
+            </if>
+            <if test="fCardNo != null">
+                CardNo,
+            </if>
+            <if test="fDepositBankPoint != null">
+                f_deposit_bank_point,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="fId != null">
+                #{fId,jdbcType=VARCHAR},
+            </if>
+            <if test="fUserAccount != null">
+                #{fUserAccount,jdbcType=VARCHAR},
+            </if>
+            <if test="fUserName != null">
+                #{fUserName,jdbcType=VARCHAR},
+            </if>
+            <if test="fPassword != null">
+                #{fPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="fCreateTime != null">
+                #{fCreateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fCreateId != null">
+                #{fCreateId,jdbcType=VARCHAR},
+            </if>
+            <if test="fUpdateTime != null">
+                #{fUpdateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fUpdateId != null">
+                #{fUpdateId,jdbcType=VARCHAR},
+            </if>
+            <if test="fErrorTimes != null">
+                #{fErrorTimes,jdbcType=INTEGER},
+            </if>
+            <if test="fSex != null">
+                #{fSex,jdbcType=INTEGER},
+            </if>
+            <if test="fBirthdayTime != null">
+                #{fBirthdayTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fNation != null">
+                #{fNation,jdbcType=VARCHAR},
+            </if>
+            <if test="fPopulation != null">
+                #{fPopulation,jdbcType=INTEGER},
+            </if>
+            <if test="fTel != null">
+                #{fTel,jdbcType=VARCHAR},
+            </if>
+            <if test="fEducational != null">
+                #{fEducational,jdbcType=INTEGER},
+            </if>
+            <if test="fExtension != null">
+                #{fExtension,jdbcType=VARCHAR},
+            </if>
+            <if test="fPhone != null">
+                #{fPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="fPayroll != null">
+                #{fPayroll,jdbcType=INTEGER},
+            </if>
+            <if test="fJoinTime != null">
+                #{fJoinTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fLeaveTime != null">
+                #{fLeaveTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fEmergency != null">
+                #{fEmergency,jdbcType=VARCHAR},
+            </if>
+            <if test="fEmergencyTel != null">
+                #{fEmergencyTel,jdbcType=VARCHAR},
+            </if>
+            <if test="fDepartmentId != null">
+                #{fDepartmentId,jdbcType=VARCHAR},
+            </if>
+            <if test="fStationId != null">
+                #{fStationId,jdbcType=VARCHAR},
+            </if>
+            <if test="fEmployeeType != null">
+                #{fEmployeeType,jdbcType=INTEGER},
+            </if>
+            <if test="fIdCard != null">
+                #{fIdCard,jdbcType=VARCHAR},
+            </if>
+            <if test="fBornProvice != null">
+                #{fBornProvice,jdbcType=BIGINT},
+            </if>
+            <if test="fBornDistrict != null">
+                #{fBornDistrict,jdbcType=BIGINT},
+            </if>
+            <if test="fBornCity != null">
+                #{fBornCity,jdbcType=BIGINT},
+            </if>
+            <if test="fBornTown != null">
+                #{fBornTown,jdbcType=BIGINT},
+            </if>
+            <if test="fCensusProvice != null">
+                #{fCensusProvice,jdbcType=BIGINT},
+            </if>
+            <if test="fCensusDistrict != null">
+                #{fCensusDistrict,jdbcType=BIGINT},
+            </if>
+            <if test="fCensusCity != null">
+                #{fCensusCity,jdbcType=BIGINT},
+            </if>
+            <if test="fCensusTown != null">
+                #{fCensusTown,jdbcType=BIGINT},
+            </if>
+            <if test="fCensusAddr != null">
+                #{fCensusAddr,jdbcType=VARCHAR},
+            </if>
+            <if test="fNowProvice != null">
+                #{fNowProvice,jdbcType=BIGINT},
+            </if>
+            <if test="fNowDistrict != null">
+                #{fNowDistrict,jdbcType=BIGINT},
+            </if>
+            <if test="fNowCity != null">
+                #{fNowCity,jdbcType=BIGINT},
+            </if>
+            <if test="fNowTown != null">
+                #{fNowTown,jdbcType=BIGINT},
+            </if>
+            <if test="fAddrDetail != null">
+                #{fAddrDetail,jdbcType=VARCHAR},
+            </if>
+            <if test="fEnglishLevel != null">
+                #{fEnglishLevel,jdbcType=VARCHAR},
+            </if>
+            <if test="fUserImage != null">
+                #{fUserImage,jdbcType=VARCHAR},
+            </if>
+            <if test="fRoleName != null">
+                #{fRoleName,jdbcType=VARCHAR},
+            </if>
+            <if test="fCompanyId != null">
+                #{fCompanyId,jdbcType=VARCHAR},
+            </if>
+            <if test="fBornName != null">
+                #{fBornName,jdbcType=VARCHAR},
+            </if>
+            <if test="fCensusName != null">
+                #{fCensusName,jdbcType=VARCHAR},
+            </if>
+            <if test="fNowName != null">
+                #{fNowName,jdbcType=VARCHAR},
+            </if>
+            <if test="fNationality != null">
+                #{fNationality,jdbcType=VARCHAR},
+            </if>
+            <if test="fDepositBank != null">
+                #{fDepositBank,jdbcType=VARCHAR},
+            </if>
+            <if test="fCardNumbers != null">
+                #{fCardNumbers,jdbcType=VARCHAR},
+            </if>
+            <if test="fConfidential != null">
+                #{fConfidential,jdbcType=VARCHAR},
+            </if>
+            <if test="fCardNo != null">
+                #{fCardNo,jdbcType=VARCHAR},
+            </if>
+            <if test="fDepositBankPoint != null">
+                #{fDepositBankPoint,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+
+    <update id="modify" parameterType="com.zuma.entity.SysSiteUserBean">
+        update sys_site_user
+        <set>
+        <if test="fUserAccount != null">
+            f_user_account = #{fUserAccount,jdbcType=VARCHAR},
+        </if>
+        <if test="fUserName != null">
+            f_user_name = #{fUserName,jdbcType=VARCHAR},
+        </if>
+        <if test="fPassword != null">
+            f_passWord = #{fPassword,jdbcType=VARCHAR},
+        </if>
+        <if test="fCreateTime != null">
+            f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="fCreateId != null">
+            f_create_id = #{fCreateId,jdbcType=VARCHAR},
+        </if>
+        <if test="fUpdateTime != null">
+            f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="fUpdateId != null">
+            f_update_id = #{fUpdateId,jdbcType=VARCHAR},
+        </if>
+        <if test="fErrorTimes != null">
+            f_error_times = #{fErrorTimes,jdbcType=INTEGER},
+        </if>
+        <if test="fSex != null">
+            f_sex = #{fSex,jdbcType=INTEGER},
+        </if>
+        <if test="fBirthdayTime != null">
+            f_birthday_time = #{fBirthdayTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="fNation != null">
+            f_nation = #{fNation,jdbcType=VARCHAR},
+        </if>
+        <if test="fPopulation != null">
+            f_population = #{fPopulation,jdbcType=INTEGER},
+        </if>
+        <if test="fTel != null">
+            f_tel = #{fTel,jdbcType=VARCHAR},
+        </if>
+        <if test="fEducational != null">
+            f_educational = #{fEducational,jdbcType=INTEGER},
+        </if>
+        <if test="fExtension != null">
+            f_extension = #{fExtension,jdbcType=VARCHAR},
+        </if>
+        <if test="fPhone != null">
+            f_phone = #{fPhone,jdbcType=VARCHAR},
+        </if>
+        <if test="fPayroll != null">
+            f_payroll = #{fPayroll,jdbcType=INTEGER},
+        </if>
+        <if test="fJoinTime != null">
+            f_join_time = #{fJoinTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="fLeaveTime != null">
+            f_leave_time = #{fLeaveTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="fEmergency != null">
+            f_emergency = #{fEmergency,jdbcType=VARCHAR},
+        </if>
+        <if test="fEmergencyTel != null">
+            f_emergency_tel = #{fEmergencyTel,jdbcType=VARCHAR},
+        </if>
+        <if test="fDepartmentId != null">
+            f_department_id = #{fDepartmentId,jdbcType=VARCHAR},
+        </if>
+        <if test="fStationId != null">
+            f_station_id = #{fStationId,jdbcType=VARCHAR},
+        </if>
+        <if test="fEmployeeType != null">
+            f_employee_type = #{fEmployeeType,jdbcType=INTEGER},
+        </if>
+        <if test="fIdCard != null">
+            f_id_card = #{fIdCard,jdbcType=VARCHAR},
+        </if>
+        <if test="fBornProvice != null">
+            f_born_provice = #{fBornProvice,jdbcType=BIGINT},
+        </if>
+        <if test="fBornDistrict != null">
+            f_born_District = #{fBornDistrict,jdbcType=BIGINT},
+        </if>
+        <if test="fBornCity != null">
+            f_born_city = #{fBornCity,jdbcType=BIGINT},
+        </if>
+        <if test="fBornTown != null">
+            f_born_town = #{fBornTown,jdbcType=BIGINT},
+        </if>
+        <if test="fCensusProvice != null">
+            f_census_provice = #{fCensusProvice,jdbcType=BIGINT},
+        </if>
+        <if test="fCensusDistrict != null">
+            f_census_district = #{fCensusDistrict,jdbcType=BIGINT},
+        </if>
+        <if test="fCensusCity != null">
+            f_census_city = #{fCensusCity,jdbcType=BIGINT},
+        </if>
+        <if test="fCensusTown != null">
+            f_census_town = #{fCensusTown,jdbcType=BIGINT},
+        </if>
+        <if test="fCensusAddr != null">
+            f_census_addr = #{fCensusAddr,jdbcType=VARCHAR},
+        </if>
+        <if test="fNowProvice != null">
+            f_now_provice = #{fNowProvice,jdbcType=BIGINT},
+        </if>
+        <if test="fNowDistrict != null">
+            f_now_district = #{fNowDistrict,jdbcType=BIGINT},
+        </if>
+        <if test="fNowCity != null">
+            f_now_city = #{fNowCity,jdbcType=BIGINT},
+        </if>
+        <if test="fNowTown != null">
+            f_now_town = #{fNowTown,jdbcType=BIGINT},
+        </if>
+        <if test="fAddrDetail != null">
+            f_addr_detail = #{fAddrDetail,jdbcType=VARCHAR},
+        </if>
+        <if test="fEnglishLevel != null">
+            f_english_level = #{fEnglishLevel,jdbcType=VARCHAR},
+        </if>
+        <if test="fUserImage != null">
+            f_user_image = #{fUserImage,jdbcType=VARCHAR},
+        </if>
+        <if test="fRoleName != null">
+            f_role_name = #{fRoleName,jdbcType=VARCHAR},
+        </if>
+        <if test="fCompanyId != null">
+            f_company_id = #{fCompanyId,jdbcType=VARCHAR},
+        </if>
+        <if test="fBornName != null">
+            f_born_name = #{fBornName,jdbcType=VARCHAR},
+        </if>
+        <if test="fCensusName != null">
+            f_census_name = #{fCensusName,jdbcType=VARCHAR},
+        </if>
+        <if test="fNowName != null">
+            f_now_name = #{fNowName,jdbcType=VARCHAR},
+        </if>
+        <if test="fNationality != null">
+            f_nationality = #{fNationality,jdbcType=VARCHAR},
+        </if>
+        <if test="fDepositBank != null">
+            f_deposit_bank = #{fDepositBank,jdbcType=VARCHAR},
+        </if>
+        <if test="fCardNumbers != null">
+            f_card_numbers = #{fCardNumbers,jdbcType=VARCHAR},
+        </if>
+        <if test="fConfidential != null">
+            f_confidential = #{fConfidential,jdbcType=VARCHAR},
+        </if>
+        <if test="fCardNo != null">
+            CardNo = #{fCardNo,jdbcType=VARCHAR},
+        </if>
+        <if test="fDepositBankPoint != null">
+            f_deposit_bank_point = #{fDepositBankPoint,jdbcType=VARCHAR},
+        </if>
+    </set>
+    where f_id = #{fId,jdbcType=VARCHAR}
+    </update>
+
+    <delete id="delete" parameterType="com.zuma.entity.SysSiteUserBean">
+        delete from sys_site_user
+        where 1= 1
+        <include refid="Example_Where_Clause" />
+    </delete>
+
+</mapper>

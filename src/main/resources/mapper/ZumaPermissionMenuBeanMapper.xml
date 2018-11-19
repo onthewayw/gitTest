@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zuma.mapper.ZumaPermissionMenuButtonBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.zuma.entity.ZumaPermissionMenuButtonBean" >
+    <id column="f_id" property="fId" jdbcType="VARCHAR" />
+    <result column="f_permission_id" property="fPermissionId" jdbcType="VARCHAR" />
+    <result column="f_menu_id" property="fMenuId" jdbcType="VARCHAR" />
+    <result column="f_button_id" property="fButtonId" jdbcType="VARCHAR" />
+    <result column="f_state" property="fState" jdbcType="INTEGER" />
+    <result column="f_create_id" property="fCreateId" jdbcType="VARCHAR" />
+    <result column="f_create_type" property="fCreateType" jdbcType="INTEGER" />
+    <result column="f_create_time" property="fCreateTime" jdbcType="TIMESTAMP" />
+    <result column="f_update_id" property="fUpdateId" jdbcType="VARCHAR" />
+    <result column="f_update_type" property="fUpdateType" jdbcType="INTEGER" />
+    <result column="f_update_time" property="fUpdateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_id, f_permission_id, f_menu_id, f_button_id, f_state, f_create_id, f_create_type, 
+    f_create_time, f_update_id, f_update_type, f_update_time
+  </sql>
+   <!-- 查询条件 -->
+    <sql id="Example_Where_Clause">
+        <trim suffixOverrides=",">
+            <if test="fId != null">
+                and f_id = #{fId}
+            </if>
+            <if test="fPermissionId != null">
+                and f_permission_id = #{fPermissionId}
+            </if>
+            <if test="fMenuId != null">
+                and f_menu_id = #{fMenuId}
+            </if>
+            <if test="fButtonId != null">
+                and f_button_id = #{fButtonId}
+            </if>
+            <if test="fState != null">
+                and f_state = #{fState}
+            </if>
+            <if test="fCreateId != null">
+                and f_create_id = #{fCreateId}
+            </if>
+            <if test="fCreateType != null">
+                and f_create_type = #{fCreateType}
+            </if>
+            <if test="fCreateTime != null">
+                and f_create_time = #{fCreateTime}
+            </if>
+             <if test="fUpdateId != null">
+                and f_update_id = #{fUpdateId}
+            </if>
+            <if test="fUpdateType != null">
+                and f_update_type = #{fUpdateType}
+            </if>
+            <if test="fUpdateTime != null">
+                and f_update_time = #{fUpdateTime}
+            </if>         
+        </trim>
+    </sql>
+  <insert id="insertSelective" parameterType="com.zuma.entity.ZumaPermissionMenuButtonBean" >
+    insert into zuma_permission_menu_button
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fId != null" >
+        f_id,
+      </if>
+      <if test="fPermissionId != null" >
+        f_permission_id,
+      </if>
+      <if test="fMenuId != null" >
+        f_menu_id,
+      </if>
+      <if test="fButtonId != null" >
+        f_button_id,
+      </if>
+      <if test="fState != null" >
+        f_state,
+      </if>
+      <if test="fCreateId != null" >
+        f_create_id,
+      </if>
+      <if test="fCreateType != null" >
+        f_create_type,
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time,
+      </if>
+      <if test="fUpdateId != null" >
+        f_update_id,
+      </if>
+      <if test="fUpdateType != null" >
+        f_update_type,
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fId != null" >
+        #{fId,jdbcType=VARCHAR},
+      </if>
+      <if test="fPermissionId != null" >
+        #{fPermissionId,jdbcType=VARCHAR},
+      </if>
+      <if test="fMenuId != null" >
+        #{fMenuId,jdbcType=VARCHAR},
+      </if>
+      <if test="fButtonId != null" >
+        #{fButtonId,jdbcType=VARCHAR},
+      </if>
+      <if test="fState != null" >
+        #{fState,jdbcType=INTEGER},
+      </if>
+      <if test="fCreateId != null" >
+        #{fCreateId,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateType != null" >
+        #{fCreateType,jdbcType=INTEGER},
+      </if>
+      <if test="fCreateTime != null" >
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateId != null" >
+        #{fUpdateId,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateType != null" >
+        #{fUpdateType,jdbcType=INTEGER},
+      </if>
+      <if test="fUpdateTime != null" >
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zuma.entity.ZumaPermissionMenuButtonBean" >
+    update zuma_permission_menu_button
+    <set >
+      <if test="fPermissionId != null" >
+        f_permission_id = #{fPermissionId,jdbcType=VARCHAR},
+      </if>
+      <if test="fMenuId != null" >
+        f_menu_id = #{fMenuId,jdbcType=VARCHAR},
+      </if>
+      <if test="fButtonId != null" >
+        f_button_id = #{fButtonId,jdbcType=VARCHAR},
+      </if>
+      <if test="fState != null" >
+        f_state = #{fState,jdbcType=INTEGER},
+      </if>
+      <if test="fCreateId != null" >
+        f_create_id = #{fCreateId,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateType != null" >
+        f_create_type = #{fCreateType,jdbcType=INTEGER},
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateId != null" >
+        f_update_id = #{fUpdateId,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateType != null" >
+        f_update_type = #{fUpdateType,jdbcType=INTEGER},
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where f_id = #{fId,jdbcType=VARCHAR}
+  </update>
+  
+   <select id="findCountByConditions" resultType="java.lang.Integer" parameterType="com.zuma.entity.ZumaPermissionMenuButtonBean">
+  select count(1) from zuma_permission_menu_button where true
+	<include refid="Example_Where_Clause" />
+  </select>
+  
+  <select id="findPageByConditions" resultMap="BaseResultMap" parameterType="com.zuma.entity.ZumaPermissionMenuButtonBean">
+	select
+	<include refid="Base_Column_List" />
+	from zuma_permission_menu_button
+	where true
+	<include refid="Example_Where_Clause" />
+	limit #{iDisplayStart},#{iDisplayLength}
+  </select>
+  <select id="findListByConditions" resultMap="BaseResultMap" parameterType="com.zuma.entity.ZumaPermissionMenuButtonBean">
+	select
+	<include refid="Base_Column_List" />
+	from zuma_permission_menu_button
+	where true
+	<include refid="Example_Where_Clause" />
+  </select>
+  <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.String">
+  select
+	<include refid="Base_Column_List" />
+	from zuma_permission_menu_button
+	where f_id = #{fId}
+  </select>
+  
+  <insert id="add" parameterType="com.zuma.entity.ZumaPermissionMenuButtonBean">
+	insert into zuma_permission_menu_button
+	<trim prefix="(" suffix=")" suffixOverrides=",">
+		<if test="fId != null">
+			f_id,
+		</if>
+		<if test="fPermissionId != null">
+			f_permission_id,
+		</if>
+		<if test="fMenuId != null">
+			f_menu_id,
+		</if>
+		<if test="fButtonId != null">
+			f_button_id,
+		</if>
+		<if test="fState != null">
+			f_state,
+		</if>
+		<if test="fCreateId != null">
+			f_create_id,
+		</if>
+		<if test="fCreateType != null">
+			f_create_type,
+		</if>
+		<if test="fCreateTime != null">
+			f_create_time,
+		</if>
+		 <if test="fUpdateId != null">
+			f_update_id,
+		</if>
+		<if test="fUpdateType != null">
+			f_update_type,
+		</if>
+		<if test="fUpdateTime != null">
+			f_update_time,
+		</if>
+	</trim>
+	<trim prefix="values (" suffix=")" suffixOverrides=",">
+		<if test="fId != null">
+			#{fId,jdbcType=VARCHAR},
+		</if>
+		<if test="fPermissionId != null">
+			#{fPermissionId,jdbcType=VARCHAR},
+		</if>
+		<if test="fMenuId != null">
+			#{fMenuId,jdbcType=VARCHAR},
+		</if>
+		<if test="fButtonId != null">
+			#{fButtonId,jdbcType=VARCHAR},
+		</if>
+		<if test="fState != null">
+			#{fState,jdbcType=INTEGER},
+		</if>
+		<if test="fCreateId != null">
+			#{fCreateId,jdbcType=VARCHAR},
+		</if>
+		<if test="fCreateType != null">
+			#{fCreateType,jdbcType=INTEGER},
+		</if>
+		<if test="fCreateTime != null">
+			#{fCreateTime,jdbcType=TIMESTAMP},
+		</if>
+		 <if test="fUpdateId != null">
+			#{fUpdateId,jdbcType=VARCHAR},
+		</if>
+		<if test="fUpdateType != null">
+			#{fUpdateType,jdbcType=INTEGER},
+		</if>
+		<if test="fUpdateTime != null">
+			#{fUpdateTime,jdbcType=TIMESTAMP},
+		</if>
+	   
+	</trim>
+  </insert>
+   <update id="modify" parameterType="com.zuma.entity.ZumaPermissionMenuButtonBean">
+	update zuma_permission_menu_button
+	<set>
+	<if test="fPermissionId != null">
+			f_permission_id = #{fPermissionId,jdbcType=VARCHAR},
+		</if>
+		<if test="fMenuId != null">
+			f_menu_id = #{fMenuId,jdbcType=VARCHAR},
+		</if>
+		<if test="fButtonId != null">
+			f_button_id = #{fButtonId,jdbcType=VARCHAR},
+		</if>
+		<if test="fState != null">
+			f_state = #{fState,jdbcType=INTEGER},
+		</if>
+		<if test="fCreateId != null">
+			f_create_id = #{fCreateId,jdbcType=VARCHAR},
+		</if>
+		<if test="fCreateType != null">
+			f_create_type = #{fCreateType,jdbcType=INTEGER},
+		</if>
+		<if test="fCreateTime != null">
+			f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+		</if>
+		 <if test="fUpdateId != null">
+			f_update_id = #{fUpdateId,jdbcType=VARCHAR},
+		</if>
+		<if test="fUpdateType != null">
+			f_update_type = #{fUpdateType,jdbcType=INTEGER},
+		</if>
+		<if test="fUpdateTime != null">
+			f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP}
+		</if>
+	</set>
+    where f_id = #{fId,jdbcType=VARCHAR}
+  </update>
+  
+  <delete id="delete" parameterType="com.zuma.entity.ZumaPermissionMenuButtonBean">
+	delete from zuma_permission_menu_button
+	where true
+	<include refid="Example_Where_Clause" />
+  </delete>
+</mapper>
